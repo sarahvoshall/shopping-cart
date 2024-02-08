@@ -1,8 +1,7 @@
 @import url("./whitespace-reset.css");
-@import url("https://fonts.googleapis.com/css?family=Rammetto+One%7CRoboto+Condensed");
 
 body {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 }
 
@@ -17,15 +16,15 @@ header {
 }
 
 header {
-  background: #07575b;
+  background: #e446cd;
   color: #fff;
-  min-height: 200px;
+  min-height: 180px;
   overflow: hidden;
   border-radius: 4px 4px 0 0;
 }
 
 header h1 {
-  font-family: "Rammetto One", cursive;
+  font-family: monospace;
   font-size: 26px;
   float: left;
 }
@@ -36,11 +35,13 @@ header .cart {
 }
 
 main {
-  background: #c4dfe6;
+  background: #e9cce2;
 }
 
 h2 {
   font-size: 22px;
+  color: white;
+
   margin-bottom: 10px;
 }
 
@@ -70,7 +71,7 @@ h3 {
 }
 
 .product .quantity.none-left {
-  color: red;
+  color: rgb(96, 19, 19);
 }
 
 .product .edit-form,
@@ -95,7 +96,8 @@ li {
 
 button {
   padding: 5px 12px 5px;
-  background: #07575b;
+  margin: 4px;
+  background: #780a3c;
   color: #fff;
   border-color: transparent;
   border-radius: 4px;
@@ -129,7 +131,7 @@ button:disabled {
   border-radius: 50%;
   width: 25px;
   height: 25px;
-  background: red;
+  background: rgb(222, 13, 121);
   color: #fff;
   padding: 0;
   cursor: pointer;
@@ -155,7 +157,7 @@ input[type="text"] input[type="number"] {
 
 input[type="text"]:focus input[type="number"]:focus {
   outline: none;
-  border-color: #07575b;
+  border-color: #2dc5cd;
 }
 
 input::-webkit-outer-spin-button,
