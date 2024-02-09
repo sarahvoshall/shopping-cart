@@ -1,7 +1,13 @@
 import Product from "./Product";
 import AddForm from "./AddForm";
 
-const Main = ({ products, onAddFormSubmit, onEditFormSubmit, onDelete }) => {
+const Main = ({
+  products,
+  onAddFormSubmit,
+  onEditFormSubmit,
+  onDelete,
+  onAddProductToCart,
+}) => {
   return (
     <main>
       <div className="product-listing">
@@ -14,6 +20,7 @@ const Main = ({ products, onAddFormSubmit, onEditFormSubmit, onDelete }) => {
                 {...product}
                 onEditFormSubmit={onEditFormSubmit}
                 onDelete={onDelete}
+                onAddProductToCart={onAddProductToCart}
               />
             );
           })}

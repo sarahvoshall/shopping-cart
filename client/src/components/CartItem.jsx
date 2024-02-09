@@ -3,7 +3,7 @@ const CartItem = ({ title, quantity, price }) => {
     <tr>
       <td>{title}</td>
       <td>{quantity}</td>
-      <td>${price}</td>
+      <td>${price * quantity}</td>
     </tr>
   );
 };

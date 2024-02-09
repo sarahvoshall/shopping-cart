@@ -79,9 +79,27 @@ const App = () => {
     }
   };
 
-  const handleAddProductToCart = async (id) => {
+  // TODO
+  const handleAddProductToCart = async (productId) => {
     try {
-      const { product, item } = await addProductToCart(id);
+      const { product: updatedProduct, item: updatedItem } =
+        await addProductToCart(productId);
+      setCartItems(
+        cartItems.find((item) => item._id === updatedItem._id)
+          ? cartItems.map((item) =>
+              item._id === updatedItem._id ? updatedItem : item,
+            )
+          : cartItems.concat(updatedItem),
+      );
+      setProducts(
+        products.map((product) => {
+          if (product._id === productId) {
+            return updatedProduct;
+          } else {
+            return product;
+          }
+        }),
+      );
     } catch (e) {
       console.error(e);
     }
@@ -95,6 +113,7 @@ const App = () => {
         onAddFormSubmit={handleAddFormSubmit}
         onEditFormSubmit={handleEditFormSubmit}
         onDelete={handleDeleteProduct}
+        onAddProductToCart={handleAddProductToCart}
       />
     </div>
   );

@@ -6,7 +6,8 @@ export const getCartItems = async () => {
 };
 
 export const addProductToCart = async (id) => {
-  const data = await axios.post("/api/add-to-cart", { productId: id });
+  const { data } = await axios.post("/api/add-to-cart", { productId: id });
   // returns an object with two fields for product and item
+  console.log(data.item, data.product);
   return data;
 };

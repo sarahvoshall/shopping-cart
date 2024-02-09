@@ -16,20 +16,25 @@ const Cart = ({ cartItems }) => {
           </thead>
           <tbody>
             {cartItems.map((item) => (
-              <CartItem {...item} />
+              <CartItem key={item._id} {...item} />
             ))}
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="3" className="total">
+              <td colSpan="3" className="total">
                 Total: $
-                {cartItems.reduce((total, { price }) => (total += price), 0)}
+                {cartItems
+                  .reduce(
+                    (total, { price, quantity }) => (total += price * quantity),
+                    0,
+                  )
+                  .toFixed(2)}
               </td>
             </tr>
           </tfoot>
         </table>
       )}
-      <button className="checkout" disabled>
+      <button className="checkout" disabled={cartItems.length === 0}>
         Checkout
       </button>
     </div>
