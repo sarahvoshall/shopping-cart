@@ -19,17 +19,22 @@ const EditForm = ({
       price: tempPrice,
       quantity: tempQuantity,
     };
-    onEditFormSubmit(updatedProduct, id);
+    onEditFormSubmit(updatedProduct, id, reset);
   };
 
-  const reset = () => {};
+  const reset = () => {
+    setTitle("");
+    setPrice("");
+    setQuantity("");
+    handleClick();
+  };
 
   return (
     <div className="edit-form">
       <h3>Edit Product</h3>
       <form onSubmit={handleEditFormSubmit}>
         <div className="input-group">
-          <label for="product-name">{title}</label>
+          <label htmlFor="product-name">{title}</label>
           <input
             type="text"
             id="product-name"
@@ -40,7 +45,7 @@ const EditForm = ({
         </div>
 
         <div className="input-group">
-          <label for="product-price">{price}</label>
+          <label htmlFor="product-price">{price}</label>
           <input
             type="number"
             id="product-price"
@@ -51,7 +56,7 @@ const EditForm = ({
         </div>
 
         <div className="input-group">
-          <label for="product-quantity">{quantity}</label>
+          <label htmlFor="product-quantity">{quantity}</label>
           <input
             type="number"
             id="product-quantity"
