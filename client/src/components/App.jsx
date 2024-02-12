@@ -79,7 +79,6 @@ const App = () => {
     }
   };
 
-  // TODO
   const handleAddProductToCart = async (productId) => {
     try {
       const { product: updatedProduct, item: updatedItem } =
